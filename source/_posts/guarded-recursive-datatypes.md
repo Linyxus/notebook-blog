@@ -35,3 +35,11 @@ def printVal[X](typ: Type[X], x: X): String = typ match {
     case TypeType(_) => "a type"
 }
 ```
+
+## $\lambda_{2,G\mu}$ 演算
+
+为了建模 GADT，也即论文中的 g.r. datatypes，作者提出了一种演算：$\lambda_{2,G\mu}$。
+下面给出了这一演算的语法定义。
+{% asset_img lambda_2Gmu_syntax.png Syntax of Lambda2Gmu %}
+
+这一演算的语法定义非常常规。值得注意的是其关于**类型变量**的相关语法结构。在 $\lambda_{2,G\mu}$ 中，$\Delta$ 表示类型变量的环境 (type variable context)。$\Delta$ 可以被认为是一系列类型变量的**声明**，列出了环境中所有有效的类型变量，以及类型变量之间的等式。而相应的，$\Theta$ 是类型变量的定义，本质上是从类型变量到实际类型的代换。
